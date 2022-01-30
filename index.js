@@ -260,7 +260,7 @@ app.get("/blog/:article", (req, res) => {
   });
 });
 
-app.post('/contact', (req, res) => {
+app.post('/contact', isLoggedIn, (req, res) => {
 
   // Instantiate the SMTP server
   const smtpTrans = nodemailer.createTransport({
